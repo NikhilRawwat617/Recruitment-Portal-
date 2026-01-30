@@ -1,0 +1,278 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f4f4f9;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+.nav_bar {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav_bar nav {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav_bar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav_bar li {
+    color: white;
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+.admin_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid #fff;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.admin_image:hover {
+    transform: scale(1.1);
+}
+
+.LogOut_button {
+    padding: 8px 18px;
+    background: #ff4d4f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.LogOut_button:hover {
+    background: #ff7875;
+    transform: translateY(-2px);
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    flex: 1 1 250px;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    color: #6a0dad;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sidebar li {
+    list-style: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f0f0f5;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sidebar li:hover {
+    background: #6a0dad;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ================= CONTENT ================= */
+.content {
+    flex: 3 1 700px;
+}
+
+/* ================= ADD JOB SECTION ================= */
+.add-job {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.add-job:hover {
+    transform: translateY(-3px);
+}
+
+.add-job button {
+    padding: 12px 25px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-job button:hover {
+    background: #45c263;
+    transform: translateY(-2px);
+}
+
+/* ================= JOB CARDS ================= */
+.job-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.job-header h2 {
+    font-size: 20px;
+    color: #6a0dad;
+}
+
+.cancel-job {
+    background: #ff4d4f;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.cancel-job:hover {
+    background: #ff7875;
+}
+
+/* ================= MODALS ================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: white;
+    width: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-box h2 {
+    color: #6a0dad;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #ff4d4f;
+    cursor: pointer;
+}
+
+.modal-box input,
+.modal-box textarea,
+.modal-box select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.modal-box button {
+    width: 100%;
+    padding: 12px;
+    background: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-box button:hover {
+    background: #8a2be2;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px){
+    .dashboard{flex-direction: column; align-items: center;}
+    .sidebar{width: 90%; margin-bottom: 20px;}
+    .content{width: 90%;}
+}
+
+@media (max-width: 576px){
+    .nav_bar nav{flex-direction: column; gap: 10px; height: auto; padding: 10px;}
+    .sidebar li, .add-job button, .cancel-job{font-size: 14px;}
+}
